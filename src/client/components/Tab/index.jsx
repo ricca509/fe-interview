@@ -24,8 +24,8 @@ const Tab = ({ title, tabIndex, onClick, isSelected = false }) => {
 
 Tab.propTypes = {
   title: PropTypes.string.isRequired,
-  tabIndex: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number,
+  onClick: PropTypes.func,
   isSelected: PropTypes.bool
 };
 

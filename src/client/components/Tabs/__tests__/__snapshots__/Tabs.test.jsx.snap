@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component should render a list of \`Tab\` with the right props and one selected content 1`] = `
+<div
+  className="tabs"
+>
+  <ul>
+    <Tab
+      isSelected={true}
+      key=".0"
+      onClick={[Function]}
+      tabIndex={0}
+      title="Tab1"
+    >
+      <div>
+        content1
+      </div>
+    </Tab>
+    <Tab
+      isSelected={false}
+      key=".1"
+      onClick={[Function]}
+      tabIndex={1}
+      title="Tab2"
+    >
+      <div>
+        content2
+      </div>
+    </Tab>
+  </ul>
+  <div
+    className="tab-content"
+  >
+    <div>
+      content1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs component should render the right selected content when a \`Tab\` is clicked 1`] = `
+<div
+  className="tabs"
+>
+  <ul>
+    <Tab
+      isSelected={false}
+      key=".0"
+      onClick={[Function]}
+      tabIndex={0}
+      title="Tab1"
+    >
+      <div>
+        content1
+      </div>
+    </Tab>
+    <Tab
+      isSelected={true}
+      key=".1"
+      onClick={[Function]}
+      tabIndex={1}
+      title="Tab2"
+    >
+      <div>
+        content2
+      </div>
+    </Tab>
+  </ul>
+  <div
+    className="tab-content"
+  >
+    <div>
+      content2
+    </div>
+  </div>
+</div>
+`;
