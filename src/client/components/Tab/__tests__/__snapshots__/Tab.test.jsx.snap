@@ -2,7 +2,7 @@
 
 exports[`Tab component should render a list element with the right title 1`] = `
 <li
-  className="tab"
+  className="tab tab-selected"
 >
   <a
     href="#"
