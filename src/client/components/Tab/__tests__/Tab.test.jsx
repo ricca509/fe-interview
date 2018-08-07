@@ -16,6 +16,19 @@ describe('Tab component', ()=> {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render with right props when `isSelected`', () => {
+    const props = {
+      title: 'Tab1',
+      tabIndex: 0,
+      onClick: ()=>({}),
+      isSelected: true
+    };
+
+    const wrapper = shallow(<Tab {...props}>content</Tab>);
+
+    expect(wrapper.find('li').prop('className')).toEqual('tab tab-selected');
+  });
+
   it('should call the `onClick` handler correctly when clicked', () => {
     const props = {
       title: 'Tab1',
