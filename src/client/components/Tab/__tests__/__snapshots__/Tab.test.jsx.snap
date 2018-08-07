@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab component should render a list element with the right title 1`] = `
+<li
+  className="tab"
+>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+    Tab1
+  </a>
+</li>
+`;
