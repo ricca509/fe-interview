@@ -44,18 +44,13 @@ class App extends React.Component {
           loading: false,
         }));
       })
-      .catch(e => {
-        console.log('Error', e);
-        this.setState(() => ({
-          loading: false,
-          error: true
-        }));
-      });
+      .catch(this.handleError);
   }
 
   handleError(e) {
     console.log('Error', e);
     this.setState(() => ({
+      loading: false,
       error: true
     }));
   }
