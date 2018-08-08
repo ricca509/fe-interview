@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bill component should render a list of \`Bill\` 1`] = `
+<ul>
+  <Bill
+    id="5a5caa1efe33900100fd8ed5"
+    isBill={false}
+    key="5a5caa1efe33900100fd8ed5"
+    name="Vodafone"
+    transactions={
+      Array [
+        Object {
+          "amount": 12.34,
+          "date": "2017-01-13",
+        },
+      ]
+    }
+  />
+  <Bill
+    id="5a5caa8efe33900100fd8ed6"
+    isBill={true}
+    key="5a5caa8efe33900100fd8ed6"
+    name="Sky TV"
+    transactions={
+      Array [
+        Object {
+          "amount": 82.17,
+          "date": "2017-01-01",
+        },
+      ]
+    }
+  />
+</ul>
+`;
