@@ -23,9 +23,12 @@ export const fetchBills = () => {
 export const patchBill = (id, isBill) => {
   return fetch(`http://localhost:3000/bills/${id}`, {
     method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: [
       {
-        op: "replace",
+        op: 'replace',
         path: '/isBill',
         value: isBill
       }
