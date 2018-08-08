@@ -2,15 +2,12 @@ import React from 'react';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
 import Bills from '../Bills';
-import { selectPotentialBills, selectBills, fetchBills } from '../../state/App/module';
-
-const onBillSelected = (id) => {
-  console.log('onBillSelected', id);
-};
-
-const onPotentialBillSelected = (id) => {
-  console.log('onPotentialBillSelected', id);
-};
+import {
+  selectPotentialBills,
+  selectBills,
+  fetchBills,
+  patchBill
+} from '../../state/App/module';
 
 class App extends React.Component {
   constructor() {
@@ -21,6 +18,11 @@ class App extends React.Component {
       loading: false,
       error: undefined
     };
+
+    this.onBillSelected = this.onBillSelected.bind(this);
+    this.onPotentialBillSelected = this.onPotentialBillSelected.bind(this);
+    this.fetchAllBills = this.fetchAllBills.bind(this);
+    this.updateBill = this.updateBill.bind(this);
   }
 
   componentDidMount()  {
@@ -28,24 +30,68 @@ class App extends React.Component {
       loading: true
     }));
 
+    this.fetchAllBills();
+  }
+
+  fetchAllBills() {
     fetchBills()
-      .then(bills => {
-        this.setState(() => ({
-          bills,
-          loading: false,
-        }));
-      })
+    .then(bills => {
+      this.setState(() => ({
+        bills,
+        loading: false,
+      }));
+    })
+    .catch(e => {
+      console.log('Error', e);
+      this.setState(() => ({
+        loading: false,
+        error: true
+      }));
+    });
+  }
+
+  onBillSelected(id) {
+    patchBill(id, false)
+      .then(() => this.updateBill(id, false))
       .catch(e => {
-        console.log('Error');
+        console.log('Error', e);
         this.setState(() => ({
-          loading: false,
           error: true
         }));
-      })
+      });
+  }
+
+  onPotentialBillSelected(id) {
+    patchBill(id, true)
+      .then(() => this.updateBill(id, true))
+      .catch(e => {
+        console.log('Error', e);
+        this.setState(() => ({
+          error: true
+        }));
+      });
+  }
+
+  updateBill(id, isBill) {
+    const bills = this.state.bills
+      .map(bill => {
+        if (bill.id === id) {
+          return {
+            ...bill,
+            isBill
+          };
+        }
+        return bill;
+      });
+
+    this.setState(() => ({
+      bills
+    }));
   }
 
   render () {
     const { loading, error, bills } = this.state;
+
     if (loading) {
       return (
         <div>Loading...</div>
@@ -62,10 +108,10 @@ class App extends React.Component {
       return (
         <Tabs>
           <Tab title="Bills">
-            <Bills bills={selectBills(this.state)} onActionClicked={onBillSelected} />
+            <Bills bills={selectBills(this.state)} onActionClicked={this.onBillSelected} />
           </Tab>
           <Tab title="Potential bills">
-            <Bills bills={selectPotentialBills(this.state)} onActionClicked={onPotentialBillSelected} />
+            <Bills bills={selectPotentialBills(this.state)} onActionClicked={this.onPotentialBillSelected} />
           </Tab>
         </Tabs>
       );

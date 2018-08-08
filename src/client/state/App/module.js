@@ -7,8 +7,6 @@ export const selectPotentialBills = state => state.bills
 const fetchJson = url => {
   return fetch(url)
     .then(response => {
-      console.log(response)
-
       if(response.ok) {
         return response;
       }
@@ -21,3 +19,21 @@ const fetchJson = url => {
 export const fetchBills = () => {
   return fetchJson('http://localhost:3000/bills')
 };
+
+export const patchBill = (id, isBill) => {
+  return fetch(`http://localhost:3000/bills/${id}`, {
+    method: 'PATCH',
+    body: [
+      {
+        op: "replace",
+        path: '/isBill',
+        value: isBill
+      }
+    ]
+  }).then(response => {
+    if(response.ok) {
+      return response;
+    }
+    throw new Error('Network response was not ok.');
+  });
+}
