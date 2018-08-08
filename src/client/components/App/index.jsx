@@ -12,8 +12,8 @@ import '../../../../node_modules/normalize.css/normalize.css';
 import '../../style.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       bills: [],

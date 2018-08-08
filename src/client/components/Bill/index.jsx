@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Transactions from '../Transactions';
 
 class Bill extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       expanded: false

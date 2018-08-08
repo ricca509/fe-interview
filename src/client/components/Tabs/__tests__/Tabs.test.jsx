@@ -1,9 +1,10 @@
 import React from 'react';
 import Tabs from '../';
-import Tab from '../../Tab';
 import { shallow } from 'enzyme';
 
 describe('Tabs component', ()=> {
+  const Tab = () => 'Tab';
+
   it('should render a list of `Tab` with the right props and one selected content', () => {
     const wrapper = shallow(
       <Tabs>
