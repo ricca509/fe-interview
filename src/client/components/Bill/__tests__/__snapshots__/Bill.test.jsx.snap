@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bill component should render a list element with the bill name and a button with the right action 1`] = `
+<li>
+  <span
+    onClick={[Function]}
+  >
+    Vodafone
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    Add as bill
+  </button>
+</li>
+`;
+
+exports[`Bill component should show \`Transactions\` when clicked 1`] = `
+<Transactions
+  transactions={
+    Array [
+      Object {
+        "amount": 12.34,
+        "date": "2017-01-13",
+      },
+      Object {
+        "amount": 14.34,
+        "date": "2017-02-13",
+      },
+    ]
+  }
+/>
+`;
