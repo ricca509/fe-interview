@@ -1,3 +1,5 @@
+const BASE_PATH = process.env.BASE_PATH || 'http://localhost:3000';
+
 export const selectBills = state => state.bills
   .filter(({ isBill }) => isBill)
 
@@ -17,11 +19,11 @@ const fetchJson = url => {
 };
 
 export const fetchBills = () => {
-  return fetchJson('http://localhost:3000/bills')
+  return fetchJson(`${BASE_PATH}/bills`)
 };
 
 export const patchBill = (id, isBill) => {
-  return fetch(`http://localhost:3000/bills/${id}`, {
+  return fetch(`${BASE_PATH}/bills/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
