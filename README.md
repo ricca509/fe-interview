@@ -28,3 +28,8 @@ Vodafone
 - Feel free to add LESS or SASS or even CSS.
 - Feel free to add tests for any components written.
 
+## Notes
+
+- I have not used Redux or any state management library because the app is not complicated enough to make it worthwhile. This means that tests are slightly more complex and the `App` component not as pretty as it could be (it could be broken down to a container + dumb component, though).
+- I have tested all the files with a pragmatic approach, trying to give an overview of my testing practice (UI tests, async tests, network mocks). Coverage of the `App` component can definitely be improved.
+- I have coded a "happy path" but prepared the code to handle errors: this part is a necessary implementation (along with the testing part) for any real world application.
