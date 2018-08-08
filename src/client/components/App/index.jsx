@@ -25,6 +25,7 @@ class App extends React.Component {
     this.onPotentialBillSelected = this.onPotentialBillSelected.bind(this);
     this.fetchAllBills = this.fetchAllBills.bind(this);
     this.updateBill = this.updateBill.bind(this);
+    this.handleError = this.handleError.bind(this);
   }
 
   componentDidMount()  {
@@ -37,41 +38,38 @@ class App extends React.Component {
 
   fetchAllBills() {
     fetchBills()
-    .then(bills => {
-      this.setState(() => ({
-        bills,
-        loading: false,
-      }));
-    })
-    .catch(e => {
-      console.log('Error', e);
-      this.setState(() => ({
-        loading: false,
-        error: true
-      }));
-    });
+      .then(bills => {
+        this.setState(() => ({
+          bills,
+          loading: false,
+        }));
+      })
+      .catch(e => {
+        console.log('Error', e);
+        this.setState(() => ({
+          loading: false,
+          error: true
+        }));
+      });
+  }
+
+  handleError(e) {
+    console.log('Error', e);
+    this.setState(() => ({
+      error: true
+    }));
   }
 
   onBillSelected(id) {
     patchBill(id, false)
       .then(() => this.updateBill(id, false))
-      .catch(e => {
-        console.log('Error', e);
-        this.setState(() => ({
-          error: true
-        }));
-      });
+      .catch(this.handleError);
   }
 
   onPotentialBillSelected(id) {
     patchBill(id, true)
       .then(() => this.updateBill(id, true))
-      .catch(e => {
-        console.log('Error', e);
-        this.setState(() => ({
-          error: true
-        }));
-      });
+      .catch(this.handleError);
   }
 
   updateBill(id, isBill) {
