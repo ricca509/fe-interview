@@ -1,5 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 
 .container {
@@ -42,6 +43,11 @@ body {
   border-bottom: 1px dashed #ddd;
 }
 
+.bill > span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .bill:last-child {
   border-bottom: none;
 }
@@ -53,4 +59,11 @@ body {
   color: #898d98;
   float: right;
   cursor: pointer;
+}
+
+.transactions {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 14px;
+  color: #898d92;
 }

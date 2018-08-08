@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Transactions component should render the count of trasactions 1`] = `
-<div>
+<div
+  className="transactions"
+>
   5
    transactions
 </div>
