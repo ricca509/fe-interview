@@ -1,6 +1,4 @@
 import {
-  selectPotentialBills,
-  selectBills,
   fetchBills,
   patchBill
 } from '../module';
