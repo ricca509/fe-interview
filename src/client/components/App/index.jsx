@@ -8,6 +8,8 @@ import {
   fetchBills,
   patchBill
 } from '../../state/App/module';
+import '../../../../node_modules/normalize.css/normalize.css';
+import '../../style.css';
 
 class App extends React.Component {
   constructor() {
@@ -106,14 +108,16 @@ class App extends React.Component {
 
     if (!loading && !error && bills.length) {
       return (
-        <Tabs>
-          <Tab title="Bills">
-            <Bills bills={selectBills(this.state)} onActionClicked={this.onBillSelected} />
-          </Tab>
-          <Tab title="Potential bills">
-            <Bills bills={selectPotentialBills(this.state)} onActionClicked={this.onPotentialBillSelected} />
-          </Tab>
-        </Tabs>
+        <div className="container">
+          <Tabs>
+            <Tab title="Bills">
+              <Bills bills={selectBills(this.state)} onActionClicked={this.onBillSelected} />
+            </Tab>
+            <Tab title="Potential bills">
+              <Bills bills={selectPotentialBills(this.state)} onActionClicked={this.onPotentialBillSelected} />
+            </Tab>
+          </Tabs>
+        </div>
       );
     }
 

@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Bill component should render a list element with the bill name and a button with the right action 1`] = `
-<li>
+<li
+  className="bill"
+>
   <span
     onClick={[Function]}
   >
     Vodafone
   </span>
   <button
+    className="bill-action"
     onClick={[Function]}
   >
     Add as bill

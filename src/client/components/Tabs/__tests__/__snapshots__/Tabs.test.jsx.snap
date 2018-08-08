@@ -4,7 +4,9 @@ exports[`Tabs component should render a list of \`Tab\` with the right props and
 <div
   className="tabs"
 >
-  <ul>
+  <ul
+    className="tab-list"
+  >
     <Tab
       isSelected={true}
       key=".0"
@@ -42,7 +44,9 @@ exports[`Tabs component should render the right selected content when a \`Tab\` 
 <div
   className="tabs"
 >
-  <ul>
+  <ul
+    className="tab-list"
+  >
     <Tab
       isSelected={false}
       key=".0"

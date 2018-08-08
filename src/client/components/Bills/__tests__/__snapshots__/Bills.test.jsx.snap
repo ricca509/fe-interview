@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Bill component should render a list of \`Bill\` 1`] = `
-<ul>
+<ul
+  className="bills"
+>
   <Bill
     id="5a5caa1efe33900100fd8ed5"
     isBill={false}

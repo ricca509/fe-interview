@@ -13,20 +13,24 @@ exports[`App component when loading should render loading component 1`] = `
 `;
 
 exports[`App component when succesfully fetched the bills should render bills 1`] = `
-<Tabs>
-  <Tab
-    title="Bills"
-  >
-    <Bills
-      onActionClicked={[Function]}
-    />
-  </Tab>
-  <Tab
-    title="Potential bills"
-  >
-    <Bills
-      onActionClicked={[Function]}
-    />
-  </Tab>
-</Tabs>
+<div
+  className="container"
+>
+  <Tabs>
+    <Tab
+      title="Bills"
+    >
+      <Bills
+        onActionClicked={[Function]}
+      />
+    </Tab>
+    <Tab
+      title="Potential bills"
+    >
+      <Bills
+        onActionClicked={[Function]}
+      />
+    </Tab>
+  </Tabs>
+</div>
 `;

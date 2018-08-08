@@ -48,7 +48,7 @@ class Tabs extends Component {
     const { children } = this.props;
     return (
       <div className="tabs">
-        <ul>
+        <ul className="tab-list">
           {this.renderTabHeaders()}
         </ul>
         <div className="tab-content">

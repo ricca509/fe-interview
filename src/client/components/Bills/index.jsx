@@ -4,7 +4,7 @@ import Bill from '../Bill';
 
 const Bills = ({ bills = [], onActionClicked }) => {
   return (
-    <ul>
+    <ul className="bills">
       {bills.map(bill => (
         <Bill
           {...bill}

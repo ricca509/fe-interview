@@ -24,9 +24,11 @@ class Bill extends Component {
     const onBillSelected = evt => onActionClicked(id);
 
     return (
-      <li>
+      <li className="bill">
         <span onClick={this.onNameClicked}>{name}</span>
-        <button onClick={onBillSelected}>{buttonCopy}</button>
+        <button className="bill-action" onClick={onBillSelected}>
+          {buttonCopy}
+        </button>
         { expanded && <Transactions transactions={transactions} />}
       </li>
     );
